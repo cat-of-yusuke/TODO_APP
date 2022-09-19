@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import { TodoItemType } from "../../../types/TodoItem";
-import { TodoListParDay } from "../todoListParDay/Container";
+import { TodoListParDay } from "../TodoListParDay/Container";
 import style from "./TodoListBox.module.css";
 
 type PropsType = {

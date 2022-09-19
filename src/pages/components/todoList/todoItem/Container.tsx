@@ -30,15 +30,15 @@ const Container: NextPage<Props> = ({ item }) => {
   const handleCheck = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const targetItem = {
       id: item.id,
-      done: event.target.checked,
+      isDone: event.target.checked,
     };
 
     await axios
-      .post("/api/items/changeDoneStatus", targetItem)
+      .post("/api/item/changeDoneStatus", targetItem)
       .catch((error) => {
         console.log(error);
       });
-    await mutate("/api/items/getAllItems");
+    await mutate("/api/item/fetchAllItems");
   };
 
   return (

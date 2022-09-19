@@ -10,9 +10,9 @@ import { ItemDetail } from "../ItemDetail/Container";
 
 type Props = {
   item: TodoItemType;
-  handleCheck: any;
-  handleOpenDetailButton: any;
-  handleCloseDetailButton: any;
+  handleCheck: (event: React.ChangeEvent<HTMLInputElement>) => Promise<void>;
+  handleOpenDetailButton: () => void;
+  handleCloseDetailButton: () => void;
   isShowDetail: boolean;
 };
 const Presneter: NextPage<Props> = (props) => {
