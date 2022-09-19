@@ -1,0 +1,23 @@
+.todoList {
+  width: calc(50% - 24px);
+  margin-left: 16px;
+  margin-right: 8px;
+}
+
+.switch_and_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title {
+  margin-left: auto;
+  margin-right: auto;
+}
+.switch {
+  width: 100px;
+}
+
+.spacer {
+  width: 100px;
+}

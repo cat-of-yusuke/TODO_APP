@@ -8,12 +8,7 @@ import { TodoItemType } from "../../../types/TodoItem";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { schema } from "./schema";
-
-type FormValueType = {
-  title: string;
-  dueDate: Date;
-  memo?: string;
-};
+import { FormValueType } from "../../../types/FormValue";
 
 type Props = {
   item: TodoItemType;
@@ -84,6 +79,7 @@ const Presenter: NextPage<Props> = (props) => {
           label="TODO"
           variant="outlined"
           InputLabelProps={{ shrink: true }}
+          {...register("title")}
           error={"title" in errors}
           helperText={errors.title?.message}
           defaultValue={item.title}

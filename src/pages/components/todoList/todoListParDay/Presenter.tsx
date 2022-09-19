@@ -2,7 +2,7 @@ import { Divider } from "@mui/material";
 import { NextPage } from "next";
 import React from "react";
 import { TodoItemType } from "../../../types/TodoItem";
-import { TodoItem } from "../todoItem/Container";
+import { TodoItem } from "../TodoItem/Container";
 import style from "./TodoListParDay.module.css";
 
 type Props = {
