@@ -9,6 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { schema } from "./schema";
 import { FormValueType } from "../../../types/FormValue";
+import moment from "moment";
 
 type Props = {
   item: TodoItemType;
@@ -98,7 +99,7 @@ const Presenter: NextPage<Props> = (props) => {
           {...register("dueDate")}
           error={"dueDate" in errors}
           helperText={errors.dueDate?.message}
-          defaultValue={item.dueDate}
+          defaultValue={moment(item.dueDate).format("YYYY-MM-DDTHH:mm")}
           sx={{
             width: "200px",
             marginTop: "32px",
