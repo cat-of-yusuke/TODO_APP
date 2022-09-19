@@ -19,7 +19,7 @@ const Container: NextPage<Props> = ({ item, handleCloseDetailButton }) => {
       id: item.id,
       title: data.title,
       dueDate: data.dueDate,
-      memo: data.memo ?? "",
+      memo: data.memo,
       isDone: item.isDone,
     };
 
