@@ -25,6 +25,7 @@ const Top: NextPage = () => {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "#fffee6",
+        minHeight: "calc(100vh - 60px)",
       }}
     >
       <TodoList items={data.items} />

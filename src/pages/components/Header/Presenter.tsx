@@ -6,13 +6,14 @@ import style from "./Header.module.css";
 const Presenter: NextPage = () => {
   return (
     <header className={style.header}>
-      <Image
-        className={style.logo}
-        src="/logo/logo-no-title.png"
-        alt="logo"
-        width={42}
-        height={35}
-      />
+      <div className={style.logo}>
+        <Image
+          src="/logo/logo-no-title.png"
+          alt="logo"
+          width={60}
+          height={50}
+        />
+      </div>
       <h1 className={style.title}>TODO APP</h1>
       <div className={style.spacer}></div>
     </header>
