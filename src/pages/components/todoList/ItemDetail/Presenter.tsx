@@ -131,22 +131,24 @@ const Presenter: NextPage<Props> = (props) => {
           }}
         >
           <Fab
-            color="secondary"
+            color="success"
             aria-label="change"
             size="medium"
             onClick={handleSubmit(onEditBtnSubmit)}
             sx={{
+              marginTop: "24px",
               marginLeft: "30%",
             }}
           >
             <ChangeCircleOutlinedIcon />
           </Fab>
           <Fab
-            color="primary"
+            color="secondary"
             aria-label="delete"
             size="medium"
             onClick={onDeleteBtnSubmit}
             sx={{
+              marginTop: "24px",
               marginRight: "30%",
             }}
           >
