@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../../prisma/prisma";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +11,10 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-const updateItem = async (req: NextApiRequest, res: NextApiResponse) => {
+const updateItem: NextApiHandler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => {
   const { id, title, dueDate, memo, done } = req.body;
   try {
     await prisma.item.update({
