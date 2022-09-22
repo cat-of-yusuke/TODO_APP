@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import prisma from "./../../../../prisma/prisma";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +11,18 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-const changeDoneStatus = async (req: NextApiRequest, res: NextApiResponse) => {
+type DataType = {
+  id: string;
+  isDone: boolean;
+};
+interface ReqType extends NextApiRequest {
+  body: DataType;
+}
+
+const changeDoneStatus: NextApiHandler = async (
+  req: ReqType,
+  res: NextApiResponse
+) => {
   const { id, isDone } = req.body;
   try {
     await prisma.item.update({

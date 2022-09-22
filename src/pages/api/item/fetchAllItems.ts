@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../../prisma/prisma";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +11,10 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-const fetchAllItems = async (req: NextApiRequest, res: NextApiResponse) => {
+const fetchAllItems: NextApiHandler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => {
   try {
     const items = await prisma.item.findMany();
     return res.status(200).json({ items });

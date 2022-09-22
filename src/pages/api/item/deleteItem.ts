@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../../prisma/prisma";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +11,17 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-const removeItem = async (req: NextApiRequest, res: NextApiResponse) => {
+type DataType = {
+  id: string;
+};
+interface ReqType {
+  body: DataType;
+}
+
+const removeItem: NextApiHandler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => {
   const { id } = req.body;
   console.log("id: " + id);
   try {
